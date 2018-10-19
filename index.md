@@ -2,7 +2,9 @@
 
 ## Progress Journal
 
-#New Week
-lalalala
+## Homework 1
 
 + [html_link](Rmarkdown.html)
+
+## Homework 2
+ [html_link](automative.html)
