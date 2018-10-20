@@ -244,13 +244,54 @@ $(document).ready(function () {
 ## 45     28575     47770       76345 2018     3</code></pre>
 <pre class="r"><code>saveRDS(car_data_march_18,file=&quot;C:\\Users\\Baris\\Desktop\\Big Data Analytics MEF 2018-2019\\TERM1\\Data Anaytics Essential\\odd_car_sales_data_sep_18.rds&quot;)</code></pre>
 <pre class="r"><code>car_data_march_18 %&gt;% 
-  filter(auto_total &gt; 0 &amp; comm_total &gt; 0) %&gt;%
+  filter(as.numeric(auto_total) &gt; 0 &amp; as.numeric(comm_total) &gt; 0) %&gt;%
   select(brand_name,total_total) %&gt;%
   arrange(desc(total_total))</code></pre>
-<pre><code>## Warning in Ops.factor(auto_total, 0): '&gt;' not meaningful for factors</code></pre>
-<pre><code>## Warning in Ops.factor(comm_total, 0): '&gt;' not meaningful for factors</code></pre>
-<pre><code>## [1] brand_name  total_total
-## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
+<pre><code>##       brand_name total_total
+## 1     VOLKSWAGEN        8535
+## 2           FORD        8518
+## 3           FIAT        8431
+## 4             DS          81
+## 5          LEXUS           8
+## 6        TOPLAM:       76345
+## 7        PORSCHE          61
+## 8       MASERATI           6
+## 9          VOLVO         503
+## 10    MITSUBISHI         448
+## 11       HYUNDAI        4417
+## 12     SSANGYONG          44
+## 13         SMART           4
+## 14         DACIA        3935
+## 15        TOYOTA        3565
+## 16       PEUGEOT        3523
+## 17        SUZUKI         323
+## 18         HONDA        3179
+## 19 MERCEDES-BENZ        3152
+## 20        NISSAN        3105
+## 21          OPEL        2989
+## 22         SKODA        2911
+## 23          JEEP         255
+## 24        JAGUAR          24
+## 25        SUBARU         224
+## 26       FERRARI           2
+## 27      INFINITI           2
+## 28       CITROEN        1792
+## 29    LAND ROVER         162
+## 30         IVECO         161
+## 31           BMW        1586
+## 32          AUDI        1552
+## 33         ISUZU         142
+## 34         MAZDA         135
+## 35    ALFA ROMEO          13
+## 36          SEAT        1226
+## 37          MINI         116
+## 38           KIA        1079
+## 39       RENAULT       10035
+## 40        KARSAN         100
+## 41  ASTON MARTIN           1
+## 42       BENTLEY           0
+## 43         CHERY           0
+## 44   LAMBORGHINI           0</code></pre>
 
 
 
