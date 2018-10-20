@@ -292,6 +292,56 @@ $(document).ready(function () {
 ## 42       BENTLEY           0
 ## 43         CHERY           0
 ## 44   LAMBORGHINI           0</code></pre>
+<pre class="r"><code>car_data_march_18 %&gt;%
+  filter(as.numeric(auto_total) &gt; 0 &amp; as.numeric(comm_total) &gt; 0) %&gt;%
+  mutate(CommAutoDif = as.numeric(comm_total) &gt;as.numeric(auto_total),CommAutoDif2 = as.numeric(auto_total) - as.numeric(comm_total)) %&gt;%
+   select(brand_name,total_total,CommAutoDif,CommAutoDif2) %&gt;%
+  arrange(desc(CommAutoDif2))</code></pre>
+<pre><code>##       brand_name total_total CommAutoDif CommAutoDif2
+## 1             DS          81       FALSE           35
+## 2        RENAULT       10035       FALSE           35
+## 3          LEXUS           8       FALSE           34
+## 4        PORSCHE          61       FALSE           32
+## 5       MASERATI           6       FALSE           31
+## 6          VOLVO         503       FALSE           29
+## 7            KIA        1079       FALSE           27
+## 8          SMART           4       FALSE           26
+## 9     VOLKSWAGEN        8535       FALSE           25
+## 10       TOPLAM:       76345       FALSE           24
+## 11        SUZUKI         323       FALSE           22
+## 12         HONDA        3179       FALSE           21
+## 13          OPEL        2989       FALSE           18
+## 14       HYUNDAI        4417       FALSE           17
+## 15         SKODA        2911       FALSE           17
+## 16          FIAT        8431       FALSE           15
+## 17          JEEP         255       FALSE           15
+## 18        JAGUAR          24       FALSE           14
+## 19        SUBARU         224       FALSE           13
+## 20         DACIA        3935       FALSE           12
+## 21        TOYOTA        3565       FALSE           12
+## 22       FERRARI           2       FALSE           10
+## 23      INFINITI           2       FALSE           10
+## 24    LAND ROVER         162       FALSE            9
+## 25        NISSAN        3105       FALSE            9
+## 26           BMW        1586       FALSE            8
+## 27 MERCEDES-BENZ        3152       FALSE            8
+## 28     SSANGYONG          44       FALSE            8
+## 29          AUDI        1552       FALSE            7
+## 30         MAZDA         135       FALSE            6
+## 31    ALFA ROMEO          13       FALSE            5
+## 32          FORD        8518       FALSE            4
+## 33       PEUGEOT        3523       FALSE            4
+## 34          SEAT        1226       FALSE            4
+## 35          MINI         116       FALSE            3
+## 36  ASTON MARTIN           1       FALSE            1
+## 37       BENTLEY           0       FALSE            0
+## 38         CHERY           0       FALSE            0
+## 39   LAMBORGHINI           0       FALSE            0
+## 40        KARSAN         100        TRUE           -1
+## 41    MITSUBISHI         448        TRUE           -2
+## 42         ISUZU         142        TRUE           -4
+## 43         IVECO         161        TRUE           -5
+## 44       CITROEN        1792        TRUE          -16</code></pre>
 
 
 
