@@ -127,8 +127,13 @@ $(document).ready(function () {
 </div>
 
 
+<div id="loading-library" class="section level2">
+<h2>Loading Library</h2>
+<p>First I need to open xlsx file. For this, I need xlsx library. In order to install the this library, I simply use “library(xlsx)” library function code for after usage of this.</p>
 <pre class="r"><code>library(xlsx)</code></pre>
+<p>“read.xlsx()” functions provides to upload data to R platform. By this, I can easily manuplate,change and play with data. With specific second code “1”, I manage the spreadsheet number which is needed for this function requirement.</p>
 <pre class="r"><code>data &lt;- read.xlsx(&quot;automative.xlsx&quot;, 1 )</code></pre>
+<p>After that cleaning data is a must. For this reason, I must select and delete some columns which have NA values in it. with -c() structure, I include the some rows in data[] body and delete the rows which I don’t want.</p>
 <pre class="r"><code>data &lt;- data[-c(1:5,51,52),]</code></pre>
 <pre class="r"><code>head(data)</code></pre>
 <pre><code>##             NA. NA..1 NA..2 NA..3 NA..4 NA..5 NA..6 NA..7 NA..8 NA..9
@@ -138,7 +143,9 @@ $(document).ready(function () {
 ## 9       BENTLEY  &lt;NA&gt;     0     0  &lt;NA&gt;  &lt;NA&gt;     0     0     0     0
 ## 10          BMW  &lt;NA&gt;  1586  1586  &lt;NA&gt;  &lt;NA&gt;     0     0  1586  1586
 ## 11        CHERY  &lt;NA&gt;  &lt;NA&gt;     0  &lt;NA&gt;  &lt;NA&gt;     0     0     0     0</code></pre>
+<p>Column names are mess. For that, I need to change the column names with reasonable types of names. with a “colnames()” function of R, I can manage and put as variable the names of columns. After that, with a vector, I simply put the required names to this data type.</p>
 <pre class="r"><code>colnames(data) &lt;- c(&quot;brand_name&quot;,&quot;auto_dom&quot;,&quot;auto_imp&quot;,&quot;auto_total&quot;,&quot;comm_dom&quot;,&quot;comm_imp&quot;,&quot;comm_total&quot;,&quot;total_dom&quot;,&quot;total_imp&quot;,&quot;total_total&quot;)</code></pre>
+<p>Here comes the tidyverse library. Tidyverse library is so intense and powerful in R. So that, I can create chains of functions with %&gt;% pipe operator to mutate some columns as well as I can filter some data in data set.</p>
 <pre class="r"><code>library(tidyverse)</code></pre>
 <pre><code>## -- Attaching packages --------------------- tidyverse 1.2.1 --</code></pre>
 <pre><code>## &lt;U+221A&gt; ggplot2 3.0.0     &lt;U+221A&gt; purrr   0.2.5
@@ -242,7 +249,9 @@ $(document).ready(function () {
 ## 43         0       503         503 2018     3
 ## 44      &lt;NA&gt;      &lt;NA&gt;        &lt;NA&gt; 2018     3
 ## 45     28575     47770       76345 2018     3</code></pre>
+<p>I must save the data in a safe folder to continue my progress. In order to do this, “saveRDS()” function helps me.</p>
 <pre class="r"><code>saveRDS(car_data_march_18,file=&quot;C:\\Users\\Baris\\Desktop\\Big Data Analytics MEF 2018-2019\\TERM1\\Data Anaytics Essential\\odd_car_sales_data_sep_18.rds&quot;)</code></pre>
+<p>Again with tidyverse I filter, select and arrange the columns of data set. Filter works with boolean operatos and select() just selects the required columns which I described. arrange() simply arranges the data key to described column in it.</p>
 <pre class="r"><code>car_data_march_18 %&gt;% 
   filter(as.numeric(auto_total) &gt; 0 &amp; as.numeric(comm_total) &gt; 0) %&gt;%
   select(brand_name,total_total) %&gt;%
@@ -292,6 +301,7 @@ $(document).ready(function () {
 ## 42       BENTLEY           0
 ## 43         CHERY           0
 ## 44   LAMBORGHINI           0</code></pre>
+<p>An lastly, I filter and original table with filter, select, mutate and arrange. First I filter numeric data if these variables which I described are positive. After that, I calculate differences of comm_total and auto_total and values which comm_total bigger than auto_total. After I select the mutated values and arrange them from biggest to lowest.</p>
 <pre class="r"><code>car_data_march_18 %&gt;%
   filter(as.numeric(auto_total) &gt; 0 &amp; as.numeric(comm_total) &gt; 0) %&gt;%
   mutate(CommAutoDif = as.numeric(comm_total) &gt;as.numeric(auto_total),CommAutoDif2 = as.numeric(auto_total) - as.numeric(comm_total)) %&gt;%
@@ -342,6 +352,7 @@ $(document).ready(function () {
 ## 42         ISUZU         142        TRUE           -4
 ## 43         IVECO         161        TRUE           -5
 ## 44       CITROEN        1792        TRUE          -16</code></pre>
+</div>
 
 
 
