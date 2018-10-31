@@ -9,7 +9,7 @@
 <meta name="generator" content="pandoc" />
 
 
-<meta name="author" content="Barış Can Tayiz" />
+<meta name="author" content="Baris Can Tayiz" />
 
 <meta name="date" content="2018-09-16" />
 
@@ -123,7 +123,7 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Homework 1</h1>
-<h4 class="author"><em>Barış Can Tayiz</em></h4>
+<h4 class="author"><em>Baris Can Tayiz</em></h4>
 <h4 class="date"><em>September 16, 2018</em></h4>
 
 </div>
@@ -131,7 +131,7 @@ $(document).ready(function () {
 
 <div id="about-me" class="section level2">
 <h2>About Me</h2>
-<p>I plan to use my data science skills on some platforms as Kaggle or assist my AI skills at some job etc.. For this purpose, I simply work on Datacamp tutorials these days to accomplish a level at data science. Besided , I regularly go ‘Sarıyer Akademi AI lessons’ in Yaşar Kemal structure. Maybe i could work there and improve my AI skills also.</p>
+<p>I plan to use my data science skills on some platforms as Kaggle or assist my AI skills at some job etc.. For this purpose, I simply work on Datacamp tutorials these days to accomplish a level at data science. Besides , I regularly go ‘Sarıyer Akademi AI lessons’ in Yaşar Kemal structure.</p>
 </div>
 <div id="summary-of-tidy-forecasting-in-r" class="section level2">
 <h2>Summary of ‘Tidy forecasting in R’</h2>
@@ -142,7 +142,66 @@ $(document).ready(function () {
 <h2>Github Documents for Usage of Fable Package</h2>
 <p>Github is a nice place for coders to improve their skills or learn new tools for their programming language use. In this site, you can see R usages of Fable package and other examples of it. Time series is the main concept about Fable package and you can see in the files. ARIMA modelling is a tool of Fable package and all the objects are stored in tidy format.</p>
 <p><a href="https://github.com/tidyverts/fable/blob/master/README.md">github link</a></p>
-<p>So these are simply the most of the sources of this package. Other information is similar or I cannot find anymore sources.</p>
+</div>
+<div id="ai-in-r" class="section level2">
+<h2>AI in R</h2>
+<p>There are several machine learning algorithms and every known algorithm finds a place in R programming language.For example, “KNN” k-nearest algorithm calculates eucledian distances of points and seperates the regions of points. Logistic Regression is a regression type but explores data as 1 and 0 so that appliers conclude binary data of data set. There are more AI examples in R language. These are:</p>
+<ol style="list-style-type: decimal">
+<li>Linear Regression</li>
+<li>Logistic Regression</li>
+<li>Decision Tree</li>
+<li>SVM</li>
+<li>Naive Bayes</li>
+<li>kNN</li>
+<li>K-Means</li>
+<li>Random Forest</li>
+<li>Dimensionality Reduction Algorithms</li>
+<li>Gradient Boosting algorithms:
+<ul>
+<li>GBM</li>
+<li>XGBoost</li>
+<li>LightGBM</li>
+<li>CatBoost</li>
+</ul></li>
+</ol>
+<div id="linear-regression" class="section level3">
+<h3>1.Linear Regression</h3>
+<p>It is used to estimate real values (cost of houses, number of calls, total sales etc.) based on continuous variable(s). Here, we establish relationship between independent and dependent variables by fitting a best line. This best fit line is known as regression line and represented by a linear equation Y= a *X + b.</p>
+</div>
+<div id="linear-regression-1" class="section level3">
+<h3>2.Linear Regression</h3>
+<p>It is a classification not a regression algorithm. It is used to estimate discrete values ( Binary values like 0/1, yes/no, true/false ) based on given set of independent variable(s). In simple words, it predicts the probability of occurrence of an event by fitting data to a logit function. Hence, it is also known as logit regression. Since, it predicts the probability, its output values lies between 0 and 1 (as expected).</p>
+</div>
+<div id="decision-tree" class="section level3">
+<h3>3.Decision Tree</h3>
+<p>It is a type of supervised learning algorithm that is mostly used for classification problems. Surprisingly, it works for both categorical and continuous dependent variables. In this algorithm, we split the population into two or more homogeneous sets. This is done based on most significant attributes/ independent variables to make as distinct groups as possible</p>
+</div>
+<div id="svm-support-vector-machine" class="section level3">
+<h3>4.SVM (Support Vector Machine)</h3>
+<p>It is a classification method. In this algorithm, we plot each data item as a point in n-dimensional space (where n is number of features you have) with the value of each feature being the value of a particular coordinate.</p>
+</div>
+<div id="naive-bayes" class="section level3">
+<h3>5. Naive Bayes</h3>
+<p>It is a classification technique based on Bayes’ theorem with an assumption of independence between predictors. In simple terms, a Naive Bayes classifier assumes that the presence of a particular feature in a class is unrelated to the presence of any other feature. For example, a fruit may be considered to be an apple if it is red, round, and about 3 inches in diameter. Even if these features depend on each other or upon the existence of the other features, a naive Bayes classifier would consider all of these properties to independently contribute to the probability that this fruit is an apple.</p>
+</div>
+<div id="knn-k--nearest-neighbors" class="section level3">
+<h3>6. kNN (k- Nearest Neighbors)</h3>
+<p>It can be used for both classification and regression problems. However, it is more widely used in classification problems in the industry. K nearest neighbors is a simple algorithm that stores all available cases and classifies new cases by a majority vote of its k neighbors. The case being assigned to the class is most common amongst its K nearest neighbors measured by a distance function.</p>
+</div>
+<div id="k-means" class="section level3">
+<h3>7. K-Means</h3>
+<p>t is a type of unsupervised algorithm which solves the clustering problem. Its procedure follows a simple and easy way to classify a given data set through a certain number of clusters (assume k clusters). Data points inside a cluster are homogeneous and heterogeneous to peer groups.</p>
+</div>
+<div id="random-forest" class="section level3">
+<h3>8. Random Forest</h3>
+<p>Random Forest is a trademark term for an ensemble of decision trees. In Random Forest, we’ve collection of decision trees (so known as “Forest”). To classify a new object based on attributes, each tree gives a classification and we say the tree “votes” for that class. The forest chooses the classification having the most votes (over all the trees in the forest).</p>
+</div>
+<div id="dimensionality-reduction-algorithms" class="section level3">
+<h3>9. Dimensionality Reduction Algorithms</h3>
+<p>In the last 4-5 years, there has been an exponential increase in data capturing at every possible stages. Corporates/ Government Agencies/ Research organisations are not only coming with new sources but also they are capturing data in great detail.</p>
+<p>These are the main algorihtms that could be explained.</p>
+<p><a href="https://www.analyticsvidhya.com/blog/2017/09/common-machine-learning-algorithms/">link</a></p>
+</div>
 </div>
 
 
