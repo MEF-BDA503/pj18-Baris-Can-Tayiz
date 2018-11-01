@@ -2,9 +2,19 @@
 
 ## Progress Journal
 
-## Homework 1
+## Assignment 1
 
 + [html_link](Rmarkdown.html)
 
-## Homework 2
+## Assignment 2
+
 + [html_link](automative.html)
+
+## Assignment 3
+
++ [html_link](Emeklilik.html)
+
+#Attention!!
+
+I renewed my Assignments. You can easily inform me about them.
+Mail: tayizb@mef.edu.tr, thank you.
