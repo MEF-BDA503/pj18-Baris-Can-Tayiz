@@ -217,33 +217,34 @@ data &lt;- read_xlsx(&quot;egmdata.xlsx&quot;,1)</code></pre>
   group_by(pension_fund_company) %&gt;%
   mutate(contracts = n_of_ind_contracts + n_of_ind_contracts) %&gt;%
   select(gov_contribution,contracts) %&gt;%
-  summarise(govContAvg = mean(gov_contribution),contAvg = mean(contracts))</code></pre>
+  summarise(govContAvg = mean(gov_contribution),contAvg = mean(contracts)) %&gt;%
+  arrange(desc(govContAvg))</code></pre>
 <pre><code>## Adding missing grouping variables: `pension_fund_company`</code></pre>
 <pre><code>## # A tibble: 20 x 3
 ##    pension_fund_company             govContAvg  contAvg
 ##    &lt;chr&gt;                                 &lt;dbl&gt;    &lt;dbl&gt;
-##  1 Aegon Emeklilik ve Hayat          15441978.   65663.
-##  2 Allianz Hayat ve Emeklilik       272992884.  214963.
-##  3 Allianz Yaşam ve Emeklilik       986490138. 1268631.
-##  4 Anadolu Hayat Emeklilik         1812891868. 1917969.
-##  5 Asya Emeklilik ve Hayat           75743346.   76840.
-##  6 Avivasa Emeklilik ve Hayat      1659169052. 2000998.
-##  7 Axa Hayat ve Emeklilik            54726264.   81346.
-##  8 Bereket Emeklilik ve Hayat        70691530.   68554.
-##  9 BNP Paribas Cardif Emeklilik     241038796.  295783.
-## 10 Cigna Finans Emeklilik ve Hayat  116977057.  198454.
-## 11 Fiba Emeklilik ve Hayat           50442742.   68160.
-## 12 Garanti Emeklilik ve Hayat      1421056644. 2018201.
-## 13 Groupama Emeklilik                      NA       NA 
-## 14 Halk Hayat ve Emeklilik          449886158.  509265.
-## 15 Katılım Emeklilik ve Hayat       141938310.  270083.
-## 16 Metlife Emeklilik ve Hayat       204758206.  300211.
-## 17 NN Hayat ve Emeklilik            335923127.  525506.
-## 18 Vakıf Emeklilik                  597511296. 1131911.
-## 19 Vakıf Emeklilik ve Hayat         712214429. 1201556.
-## 20 Ziraat Hayat ve Emeklilik        492573034.  756586.</code></pre>
-<div id="personal-gatherins-of-companies" class="section level2">
-<h2>Personal gatherins of Companies</h2>
+##  1 Anadolu Hayat Emeklilik         1812891868. 1917969.
+##  2 Avivasa Emeklilik ve Hayat      1659169052. 2000998.
+##  3 Garanti Emeklilik ve Hayat      1421056644. 2018201.
+##  4 Allianz Yaşam ve Emeklilik       986490138. 1268631.
+##  5 Vakıf Emeklilik ve Hayat         712214429. 1201556.
+##  6 Vakıf Emeklilik                  597511296. 1131911.
+##  7 Ziraat Hayat ve Emeklilik        492573034.  756586.
+##  8 Halk Hayat ve Emeklilik          449886158.  509265.
+##  9 NN Hayat ve Emeklilik            335923127.  525506.
+## 10 Allianz Hayat ve Emeklilik       272992884.  214963.
+## 11 BNP Paribas Cardif Emeklilik     241038796.  295783.
+## 12 Metlife Emeklilik ve Hayat       204758206.  300211.
+## 13 Katılım Emeklilik ve Hayat       141938310.  270083.
+## 14 Cigna Finans Emeklilik ve Hayat  116977057.  198454.
+## 15 Asya Emeklilik ve Hayat           75743346.   76840.
+## 16 Bereket Emeklilik ve Hayat        70691530.   68554.
+## 17 Axa Hayat ve Emeklilik            54726264.   81346.
+## 18 Fiba Emeklilik ve Hayat           50442742.   68160.
+## 19 Aegon Emeklilik ve Hayat          15441978.   65663.
+## 20 Groupama Emeklilik                      NA       NA</code></pre>
+<div id="personal-gatherings-of-companies" class="section level2">
+<h2>Personal gatherings of Companies</h2>
 <p>So, I summed the number of personas and their applications on retirement companies and summarise it in table. After that, I measure the distinct values on table to see which companies are good and which are worse by the measure of individual impact.</p>
 <pre class="r"><code>data %&gt;%group_by(pension_fund_company)%&gt;%
   mutate(indSum = (as.numeric(n_of_participants) + as.numeric(n_of_pensioners) + as.numeric(n_of_ind_contracts) + as.numeric(n_of_employer_group_certificates))) %&gt;%
