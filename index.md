@@ -14,6 +14,11 @@
 
 + [html_link](Emeklilik.html)
 
+## Aggregation Car Data Assignment
+
+This is recently my progress on car data:
++ [html_link](TopluAraçAnalizi.html)
+
 ## Attention!!
 
 I renewed my Assignments. You can easily inform me about them.
