@@ -19,6 +19,12 @@
 This is recently my progress on car data:
 + [html_link](TopluAraçAnalizi.html)
 
+## Group Project Progress
+
+Group Project Progress:
++ [html_link](BorsaAnaliz.html)
+
+
 ## Attention!!
 
 I renewed my Assignments. You can easily inform me about them.
